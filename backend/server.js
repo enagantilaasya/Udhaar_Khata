@@ -12,7 +12,9 @@ config();
 const app = exp();
 // Cors
 app.use(cors({
-        origin: ["http://localhost:5173"],
+        origin: ["http://localhost:5173",
+                  "https://udhaar-khata-seven.vercel.app",
+        ],
         credentials: true,
         })
 );
