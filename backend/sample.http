@@ -1,167 +1,84 @@
-### =====================================
+### Home Route
+GET http://localhost:4000/
 
-### REGISTER SHOP OWNER
+###
 
-### =====================================
-
+### Register User
 POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-"shopName": "Laasya Kirana Store",
-"ownerName": "Laasya",
-"email": "[laasya@gmail.com](mailto:laasya@gmail.com)",
-"phone": "9876543210",
-"password": "123456"
+  "name": "Laasya",
+  "email": "laasya@gmail.com",
+  "password": "123456"
 }
 
-### =====================================
+###
 
-### LOGIN
-
-### =====================================
-
+### Login User
 POST http://localhost:4000/auth/login
 Content-Type: application/json
 
 {
-"email": "[laasya@gmail.com](mailto:laasya@gmail.com)",
-"password": "123456"
+  "email": "laasya@gmail.com",
+  "password": "123456"
 }
 
-### =====================================
+###
 
-### ADD CUSTOMER
-
-### Replace YOUR_TOKEN
-
-### =====================================
-
+### Add Customer
 POST http://localhost:4000/customers/add-customer
 Content-Type: application/json
-Authorization: Bearer YOUR_TOKEN
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTJiZjkyNmZkYzQzOGRiOGQ3YmI2NjgiLCJlbWFpbCI6ImxhYXN5YUBnbWFpbC5jb20iLCJpYXQiOjE3ODE0MzIxNDQsImV4cCI6MTc4MTUxODU0NH0.7l89hAXqbqtVqKhK1SZX44Fx7JH0hh5mDEcKj2jtd9E
 
 {
-"name": "Ramesh",
-"phone": "9876543211",
-"address": "Hyderabad"
+  "name": "Sindhu",
+  "phone": "8309552163",
+  "address": "Hyderabad"
 }
 
-### =====================================
+###
 
-### GET ALL CUSTOMERS
-
-### =====================================
-
+### Get All Customers
 GET http://localhost:4000/customers/all-customers
-Authorization: Bearer YOUR_TOKEN
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTJiZjkyNmZkYzQzOGRiOGQ3YmI2NjgiLCJlbWFpbCI6ImxhYXN5YUBnbWFpbC5jb20iLCJpYXQiOjE3ODE0MzIxNDQsImV4cCI6MTc4MTUxODU0NH0.7l89hAXqbqtVqKhK1SZX44Fx7JH0hh5mDEcKj2jtd9E
 
-### =====================================
+###
 
-### GET SINGLE CUSTOMER
-
-### Replace CUSTOMER_ID
-
-### =====================================
-
-GET http://localhost:4000/customers/customer/CUSTOMER_ID
-Authorization: Bearer YOUR_TOKEN
-
-### =====================================
-
-### DELETE CUSTOMER
-
-### Replace CUSTOMER_ID
-
-### =====================================
-
-DELETE http://localhost:4000/customers/delete-customer/CUSTOMER_ID
-Authorization: Bearer YOUR_TOKEN
-
-### =====================================
-
-### ADD CREDIT TRANSACTION
-
-### Replace CUSTOMER_ID
-
-### =====================================
-
+### Add Transaction
 POST http://localhost:4000/transactions/add-transaction
 Content-Type: application/json
-Authorization: Bearer YOUR_TOKEN
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTJiZjkyNmZkYzQzOGRiOGQ3YmI2NjgiLCJlbWFpbCI6ImxhYXN5YUBnbWFpbC5jb20iLCJpYXQiOjE3ODE0MzIxNDQsImV4cCI6MTc4MTUxODU0NH0.7l89hAXqbqtVqKhK1SZX44Fx7JH0hh5mDEcKj2jtd9E
 
 {
-"customerId": "CUSTOMER_ID",
-"amount": 500,
-"type": "credit",
-"note": "Rice Purchase",
-"paymentMethod": "cash"
+  "customerId": "6a2e7f761daa256d242d2b36",
+  "amount": 1000,
+  "type": "debit",
+  "note": "Pending Amount",
+  "paymentMethod": "cash"
 }
 
-### =====================================
+###
 
-### ADD DEBIT TRANSACTION
-
-### Replace CUSTOMER_ID
-
-### =====================================
-
-POST http://localhost:4000/transactions/add-transaction
-Content-Type: application/json
-Authorization: Bearer YOUR_TOKEN
-
-{
-"customerId": "CUSTOMER_ID",
-"amount": 300,
-"type": "debit",
-"note": "Payment Received",
-"paymentMethod": "gpay"
-}
-
-### =====================================
-
-### GET ALL TRANSACTIONS
-
-### =====================================
-
+### Get All Transactions
 GET http://localhost:4000/transactions/all-transactions
-Authorization: Bearer YOUR_TOKEN
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTJiZjkyNmZkYzQzOGRiOGQ3YmI2NjgiLCJlbWFpbCI6ImxhYXN5YUBnbWFpbC5jb20iLCJpYXQiOjE3ODE0MzIxNDQsImV4cCI6MTc4MTUxODU0NH0.7l89hAXqbqtVqKhK1SZX44Fx7JH0hh5mDEcKj2jtd9E
 
-### =====================================
+###
 
-### GET CUSTOMER TRANSACTIONS
-
-### Replace CUSTOMER_ID
-
-### =====================================
-
-GET http://localhost:4000/transactions/customer-transactions/CUSTOMER_ID
-Authorization: Bearer YOUR_TOKEN
-
-### =====================================
-
-### DELETE TRANSACTION
-
-### Replace TRANSACTION_ID
-
-### =====================================
-
-DELETE http://localhost:4000/transactions/delete-transaction/TRANSACTION_ID
-Authorization: Bearer YOUR_TOKEN
-
-### =====================================
-
-### DASHBOARD ANALYTICS
-
-### =====================================
-
+### Dashboard Analytics
 GET http://localhost:4000/analytics/dashboard
-Authorization: Bearer YOUR_TOKEN
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTJiZjkyNmZkYzQzOGRiOGQ3YmI2NjgiLCJlbWFpbCI6ImxhYXN5YUBnbWFpbC5jb20iLCJpYXQiOjE3ODE0MzIxNDQsImV4cCI6MTc4MTUxODU0NH0.7l89hAXqbqtVqKhK1SZX44Fx7JH0hh5mDEcKj2jtd9E
 
-### =====================================
+###
 
-### LOGOUT
+### Send Reminder SMS
+POST http://localhost:4000/reminder/send
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTJiZjkyNmZkYzQzOGRiOGQ3YmI2NjgiLCJlbWFpbCI6ImxhYXN5YUBnbWFpbC5jb20iLCJpYXQiOjE3ODE0MzIxNDQsImV4cCI6MTc4MTUxODU0NH0.7l89hAXqbqtVqKhK1SZX44Fx7JH0hh5mDEcKj2jtd9E
 
-### =====================================
-
-GET http://localhost:4000/auth/logout
+{
+  "phone": "8309552163",
+  "name": "Sindhu",
+  "balance": 1000
+}

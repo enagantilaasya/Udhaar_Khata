@@ -12,36 +12,32 @@ function Login() {
     password: "",
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    console.log("Sending:", form);
+  try {
+    const response = await login(form);
 
-    try {
-      const response = await login(form);
+    console.log(
+      "Login Success:",
+      response
+    );
 
-      console.log(
-        "Login Success:",
-        response
-      );
+    // Success Message Here
 
-      alert("Login Success");
+    navigate("/dashboard");
 
-      navigate("/dashboard");
+  } catch (err) {
 
-    } catch (err) {
+    console.log(
+      "Backend Error:",
+      err.response?.data
+    );
 
-      console.log(
-        "Backend Error:",
-        err.response?.data
-      );
+    // Error Message Here
 
-      alert(
-        err.response?.data?.message ||
-        "Login Failed"
-      );
-    }
-  };
+  }
+};
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-slate-100">
