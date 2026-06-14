@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API ="http://localhost:4000";
+const API ="https://udhaar-khata-qedh.onrender.com";
 
 export const useAuthStore =
   create((set) => ({

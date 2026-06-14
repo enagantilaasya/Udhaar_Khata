@@ -50,7 +50,7 @@ function Reminder() {
 
         const response =
           await axios.post(
-            "http://localhost:4000/reminder/send",
+            "https://udhaar-khata-qedh.onrender.com/reminder/send",
             {
               phone:
                 customer.phone,

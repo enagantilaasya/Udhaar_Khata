@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API ="http://localhost:4000";
+const API ="https://udhaar-khata-qedh.onrender.com";
 
 export const useCustomerStore = create((set) => ({
     customers: [],
@@ -66,7 +66,7 @@ export const useCustomerStore = create((set) => ({
     }
   );
 },
-    giveDiscount:
+giveDiscount: 
 async (
   customerId,
   discountPercentage
@@ -79,7 +79,7 @@ async (
 
   const response =
     await axios.put(
-      `http://localhost:4000/customers/give-discount/${customerId}`,
+      `https://udhaar-khata-qedh.onrender.com/customers/give-discount/${customerId}`,
       {
         discountPercentage,
       },

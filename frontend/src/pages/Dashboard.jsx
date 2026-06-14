@@ -48,7 +48,7 @@ function Dashboard() {
 
         const dashboardResponse =
           await axios.get(
-            "http://localhost:4000/analytics/dashboard",
+            "https://udhaar-khata-qedh.onrender.com/analytics/dashboard",
             {
               headers: {
                 Authorization:
@@ -64,7 +64,7 @@ function Dashboard() {
 
         const transactionResponse =
           await axios.get(
-            "http://localhost:4000/transactions/all-transactions",
+            "https://udhaar-khata-qedh.onrender.com/transactions/all-transactions",
             {
               headers: {
                 Authorization:

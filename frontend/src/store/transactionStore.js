@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
-const API ="http://localhost:4000";
+const API ="https://udhaar-khata-qedh.onrender.com";
 
 export const useTransactionStore =create((set) => ({
 
@@ -53,7 +53,7 @@ export const useTransactionStore =create((set) => ({
     localStorage.getItem("token");
 
   await axios.delete(
-    `http://localhost:4000/transactions/delete-transaction/${id}`,
+    `https://udhaar-khata-qedh.onrender.com/transactions/delete-transaction/${id}`,
     {
       headers: {
         Authorization:

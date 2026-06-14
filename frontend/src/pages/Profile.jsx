@@ -28,7 +28,7 @@ function Profile() {
 
         const response =
           await axios.get(
-            "http://localhost:4000/analytics/dashboard",
+            "https://udhaar-khata-qedh.onrender.com/analytics/dashboard",
             {
               headers: {
                 Authorization:

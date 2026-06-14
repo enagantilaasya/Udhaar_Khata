@@ -37,7 +37,7 @@ function Ranking() {
 
         const response =
           await axios.get(
-            "http://localhost:4000/customers/all-customers",
+            "https://udhaar-khata-qedh.onrender.com/customers/all-customers",
             {
               headers: {
                 Authorization:

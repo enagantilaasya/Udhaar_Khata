@@ -23,7 +23,7 @@ function CustomerDetails() {
   const fetchCustomer = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/customers/customer/${id}`,
+        `https://udhaar-khata-qedh.onrender.com/customers/customer/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -40,7 +40,7 @@ function CustomerDetails() {
   const fetchTransactions = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/transactions/customer-transactions/${id}`,
+        `https://udhaar-khata-qedh.onrender.com/transactions/customer-transactions/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
