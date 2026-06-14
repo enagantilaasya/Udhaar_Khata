@@ -13,6 +13,11 @@ reminderApp.post("/send",verifyToken,async (req, res) => {
 
       console.log("BODY:", req.body);
       const {phone,name,balance,} = req.body;
+      console.log("PHONE:", phone);
+console.log("TO:", `+91${phone}`);
+console.log("TWILIO_PHONE:", process.env.TWILIO_PHONE);
+console.log("SID EXISTS:", !!process.env.TWILIO_SID);
+console.log("TOKEN EXISTS:", !!process.env.TWILIO_AUTH_TOKEN);
       const message =await client.messages.create({
           body: `Hello ${name}, your pending balance is ₹${balance}. Kindly clear your dues.`,
           from: process.env.TWILIO_PHONE,
@@ -23,10 +28,17 @@ reminderApp.post("/send",verifyToken,async (req, res) => {
         message: "Reminder Sent",
       });
     } catch (err) {
-      console.log("TWILIO ERROR:");
-      console.log(err);
-      console.log(err.message);
+      console.log("TWILIO ERROR:", err);
 
+if (err.code) {
+  console.log("Error Code:", err.code);
+}
+
+if (err.status) {
+  console.log("Status:", err.status);
+}
+
+console.log("Message:", err.message);
       res.status(500).json({
         message: err.message,
       });
