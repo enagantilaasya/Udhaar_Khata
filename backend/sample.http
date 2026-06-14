@@ -1,0 +1,167 @@
+### =====================================
+
+### REGISTER SHOP OWNER
+
+### =====================================
+
+POST http://localhost:4000/auth/register
+Content-Type: application/json
+
+{
+"shopName": "Laasya Kirana Store",
+"ownerName": "Laasya",
+"email": "[laasya@gmail.com](mailto:laasya@gmail.com)",
+"phone": "9876543210",
+"password": "123456"
+}
+
+### =====================================
+
+### LOGIN
+
+### =====================================
+
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+"email": "[laasya@gmail.com](mailto:laasya@gmail.com)",
+"password": "123456"
+}
+
+### =====================================
+
+### ADD CUSTOMER
+
+### Replace YOUR_TOKEN
+
+### =====================================
+
+POST http://localhost:4000/customers/add-customer
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN
+
+{
+"name": "Ramesh",
+"phone": "9876543211",
+"address": "Hyderabad"
+}
+
+### =====================================
+
+### GET ALL CUSTOMERS
+
+### =====================================
+
+GET http://localhost:4000/customers/all-customers
+Authorization: Bearer YOUR_TOKEN
+
+### =====================================
+
+### GET SINGLE CUSTOMER
+
+### Replace CUSTOMER_ID
+
+### =====================================
+
+GET http://localhost:4000/customers/customer/CUSTOMER_ID
+Authorization: Bearer YOUR_TOKEN
+
+### =====================================
+
+### DELETE CUSTOMER
+
+### Replace CUSTOMER_ID
+
+### =====================================
+
+DELETE http://localhost:4000/customers/delete-customer/CUSTOMER_ID
+Authorization: Bearer YOUR_TOKEN
+
+### =====================================
+
+### ADD CREDIT TRANSACTION
+
+### Replace CUSTOMER_ID
+
+### =====================================
+
+POST http://localhost:4000/transactions/add-transaction
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN
+
+{
+"customerId": "CUSTOMER_ID",
+"amount": 500,
+"type": "credit",
+"note": "Rice Purchase",
+"paymentMethod": "cash"
+}
+
+### =====================================
+
+### ADD DEBIT TRANSACTION
+
+### Replace CUSTOMER_ID
+
+### =====================================
+
+POST http://localhost:4000/transactions/add-transaction
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN
+
+{
+"customerId": "CUSTOMER_ID",
+"amount": 300,
+"type": "debit",
+"note": "Payment Received",
+"paymentMethod": "gpay"
+}
+
+### =====================================
+
+### GET ALL TRANSACTIONS
+
+### =====================================
+
+GET http://localhost:4000/transactions/all-transactions
+Authorization: Bearer YOUR_TOKEN
+
+### =====================================
+
+### GET CUSTOMER TRANSACTIONS
+
+### Replace CUSTOMER_ID
+
+### =====================================
+
+GET http://localhost:4000/transactions/customer-transactions/CUSTOMER_ID
+Authorization: Bearer YOUR_TOKEN
+
+### =====================================
+
+### DELETE TRANSACTION
+
+### Replace TRANSACTION_ID
+
+### =====================================
+
+DELETE http://localhost:4000/transactions/delete-transaction/TRANSACTION_ID
+Authorization: Bearer YOUR_TOKEN
+
+### =====================================
+
+### DASHBOARD ANALYTICS
+
+### =====================================
+
+GET http://localhost:4000/analytics/dashboard
+Authorization: Bearer YOUR_TOKEN
+
+### =====================================
+
+### LOGOUT
+
+### =====================================
+
+GET http://localhost:4000/auth/logout
