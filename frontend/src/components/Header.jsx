@@ -24,7 +24,14 @@ function Header() {
 
           <Link
             to="/login"
-            className="font-medium text-slate-700"
+            className="
+            px-5
+            py-2
+            rounded-xl
+            text-white
+            bg-gradient-to-r
+            from-emerald-600
+            to-cyan-500"
           >
             Login
           </Link>
